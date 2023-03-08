@@ -55,12 +55,27 @@
         {
             if (index == 0)
                 throw new Exception("Out of index!");
-            if (index == _InnerArray.Length / 2)
-                throw new NotImplementedException();
+            if (index == _InnerArray.Length / 2) {
+                DivideArray(_InnerArray); // HAFTA 1 ÖDEV
+            }
             var temp = _InnerArray[index - 1];
             _InnerArray[index - 1] = null;
             index--;
             return temp;
+        }
+
+        private void DivideArray(object[] arr) { // HAFTA 1 ÖDEV
+            try
+            {
+                var newArray = new Object[arr.Length / 2];
+                System.Array.Copy(arr, newArray, arr.Length / 2);
+                _InnerArray = newArray;
+            }
+            catch (System.Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
         }
 
         /// <summary>

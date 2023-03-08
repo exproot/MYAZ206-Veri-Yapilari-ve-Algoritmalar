@@ -204,5 +204,21 @@ namespace ArrayTests
                 Assert.True(true);
             }
         }
+
+        [Fact]
+        public void Array_Divide_Test() // HAFTA 1 ÖDEV
+        {
+            var array = new Array.Array();
+            array.Add(0); 
+            array.Add(1);
+            array.Add(2);
+            array.Add(3); // dizi uzunlugu 4
+            array.Add(4); // 5.elemani ekledik double metodu calisti ve uzunluk 8e cikacak.
+
+            array.Remove(); // 1 eleman sildik, index 5 oldu.
+            array.Remove(); // 1 eleman daha sildik index uzunlugun yarisi olan 4e dustu ve dizi uzunlugu yariya dusuruldu.
+
+            Assert.Equal(4, array.Capacity);
+        }
     }
 }
