@@ -1,2 +1,6 @@
-## Hafta 01
-* Array sınıfı için "DivideArray" metodu oluşturuldu ve bunun için gerekli testler ArrayTests.cs içinde kontrol edildi.
+## Hafta 02
+* Array sınıfına IEnumerator arayüzü implemente edildi.
+* Array sınıfının constructorı overload edildi.
+* Array sınıfı için SetItem metodu oluşturuldu.
+* Testler oluşturuldu.
+
