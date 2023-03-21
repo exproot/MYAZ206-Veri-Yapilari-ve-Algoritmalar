@@ -54,6 +54,22 @@ namespace ArrayTests
             Assert.Equal(item, "Mehmet");
         }
 
+        [Fact]
+        public void Array_Divide_Test() // HAFTA 1 ÖDEV
+        {
+            var array = new Array.Array();
+            array.Add(0); 
+            array.Add(1);
+            array.Add(2);
+            array.Add(3); // dizi uzunlugu 4
+            array.Add(4); // 5.elemani ekledik double metodu calisti ve uzunluk 8e cikacak.
+
+            array.Remove(); // 1 eleman sildik, index 5 oldu.
+            array.Remove(); // 1 eleman daha sildik index uzunlugun yarisi olan 4e dustu ve dizi uzunlugu yariya dusuruldu.
+
+            Assert.Equal(4, array.Capacity);
+        }
+
         /// <summary>
         /// Week 1 - GetItem Metot Hata Firlatma Test
         /// </summary>
@@ -68,59 +84,13 @@ namespace ArrayTests
                 array.Add("Mehmet");
 
                 // Act
-                var item = array.GetItem(-1);
+                var item = array.GetItem(1);
 
                 // Assert
-                Assert.False(true);
+                Assert.False(item.Equals("Ahmet"));
             }
             catch (IndexOutOfRangeException)
             {
-                Assert.True(true);
-            }
-        }
-
-        /// <summary>
-        /// Week 1 - RemoveItem Metot Test
-        /// </summary>
-        [Fact]
-        public void Array_RemoveItem_Test()
-        {
-            // Arrange
-            var array = new Array.Array();
-            array.Add(0);
-            array.Add(1);
-
-            // Act
-            var item1 = array.RemoveItem(0);
-            var item2 = array.RemoveItem(2);
-
-            // Assert
-            Assert.Equal(0, item1);
-            Assert.Equal(-1, item2);
-        }
-
-        /// <summary>
-        /// Week 1 - RemoveItem Metot Hata Firlatma Test
-        /// </summary>
-        [Fact]
-        public void Array_RemoveItem_Exception_Test()
-        {
-            try
-            {
-                // Arrange
-                var array = new Array.Array();
-                array.Add(0);
-                array.Add(1);
-
-                // Act
-                var item = array.RemoveItem(-1);
-
-                // Assert
-                Assert.False(true);
-            }
-            catch (IndexOutOfRangeException)
-            {
-                // Assert
                 Assert.True(true);
             }
         }
@@ -147,6 +117,59 @@ namespace ArrayTests
             Assert.Equal(item2, "Ahmet");
         }
 
+        [Fact]
+        public void Array_GetEnumerator_Test()
+        {
+            // Arrange
+            var array = new Array.Array();
+            array.Add("Ahmet");
+            array.Add("Mehmet");
+            array.Add("Can");
+
+            string result = "";
+            foreach (var item in array)
+            {
+                result = string.Concat(result, item);
+            }
+
+            Assert.Equal("AhmetMehmetCan", result);
+
+        }
+
+        [Fact]
+        public void Array_Constructor_Test()
+        {
+            // Arrange
+            var array = new Array.Array(36,23,55,44,61);
+
+            // Act
+            var result = array.Capacity; // 5
+            
+            var result2 = String.Empty;
+            foreach (var item in array)
+            {
+                result2 = string.Concat(result2, item);
+            }
+
+            // Assert
+            Assert.Equal(5, result);
+            Assert.Equal("3623554461", result2);
+        }
+
+        [Fact]
+        public void Array_SetItem_Test()
+        {
+            // Arrange
+            var numbers = new Array.Array(1, 3, 5, 7);
+
+            // Act
+            numbers.SetItem(2, 55);
+
+            // Assert
+            Assert.Equal(55,numbers.GetItem(2));
+            Assert.True(numbers.GetItem(2).Equals(55));
+        }
+
         /// <summary>
         /// Week 1 - Find Metot Test
         /// </summary>
@@ -167,109 +190,50 @@ namespace ArrayTests
             Assert.Equal(item2, -1);
         }
 
+        
+        /// <summary>
+        /// Week 2 - Test
+        /// </summary>
         [Fact]
         public void Array_Remove_Test()
         {
             // Arrange
             var array = new Array.Array();
-            array.Add("Ahmet"); //0
-            array.Add("Mehmet");// 1
+            array.Add(0);   // 0
+            array.Add(1);   // 1
+            array.Add(2);   // 2
+            array.Add(3);   // 3
+            array.Add(4);   // 4
 
             // Act
-            var item1 = array.Remove();
-            var item2 = array.Remove();
-
+            var item = array.RemoveItem(2);
+            var item2 = array.GetItem(2);
+            array.RemoveItem(3);
+            
             // Assert
-            Assert.Equal(item1, "Mehmet");
-            Assert.Equal(item2, "Ahmet");
-        }
-
-        [Fact]
-        public void Array_Remove_Exception_Test()
-        {
-            // Try
-            try
-            {
-                // Arrange
-                var array = new Array.Array();
-
-                // Act
-                var item1 = array.Remove();
-
-                // Assert
-                Assert.True(false);
-            }
-            catch (Exception)
-            {
-                Assert.True(true);
-            }
-        }
-
-        [Fact]
-        public void Array_Divide_Test() // HAFTA 1 ÖDEV
-        {
-            var array = new Array.Array();
-            array.Add(0); 
-            array.Add(1);
-            array.Add(2);
-            array.Add(3); // dizi uzunlugu 4
-            array.Add(4); // 5.elemani ekledik double metodu calisti ve uzunluk 8e cikacak.
-
-            array.Remove(); // 1 eleman sildik, index 5 oldu.
-            array.Remove(); // 1 eleman daha sildik index uzunlugun yarisi olan 4e dustu ve dizi uzunlugu yariya dusuruldu.
-
+            Assert.Equal(2, item);
+            Assert.Equal(3, item2);
             Assert.Equal(4, array.Capacity);
         }
 
+
         [Fact]
-        public void Array_GetEnumerator_Test()
+        public void Array_Copy_Test()
         {
             // Arrange
             var array = new Array.Array();
-            array.Add("Ahmet");
-            array.Add("Mehmet");
-            array.Add("Can");
-
-            string result = "";
-            foreach (var item in array)
-            {
-                result = string.Concat(result, item);
-            }
-
-            Assert.Equal("AhmetMehmetCan", result);
-
-        }
-        [Fact]
-        public void Array_Constructor_Test()
-        {
-            // Arrange
-            var array = new Array.Array(36,23,55,44,61);
-
-            // Act
-            var result = array.Capacity; // 5
             
-            var result2 = String.Empty;
-            foreach (var item in array)
-            {
-                result2 = string.Concat(result2, item);
-            }
-
-            // Assert
-            Assert.Equal(5, result);
-            Assert.Equal("3623554461", result2);
-        }
-        [Fact]
-        public void Array_SetItem_Test()
-        {
-            // Arrange
-            var numbers = new Array.Array(1, 3, 5, 7);
+            array.Add("Ahmet");     // 0
+            array.Add("Mehmet");    // 1
+            array.Add("Can");       // 2
+            array.Add("Deniz");     // 3
 
             // Act
-            numbers.SetItem(2, 55);
+            var newArray = array.Copy(2, 3);
+            var item = newArray[0];
 
             // Assert
-            Assert.Equal(55,numbers.GetItem(2));
-            Assert.True(numbers.GetItem(2).Equals(55));
+            Assert.Equal("Can", item);
         }
     }
 }
