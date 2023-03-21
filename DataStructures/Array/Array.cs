@@ -1,6 +1,8 @@
-﻿namespace Array
+﻿using System.Collections;
+
+namespace Array
 {
-    public class Array
+    public class Array : IEnumerable
     {
         // Object
         // Type : Array
@@ -14,6 +16,12 @@
         public Array()
         {
             _InnerArray = new Object[4]; // Block allocation
+        }
+
+         public Array(params Object[] init) {
+            var newArray = new Object[init.Length];
+            System.Array.Copy(init, newArray, init.Length);
+            _InnerArray = newArray;
         }
 
         public void Add(Object item)
@@ -49,6 +57,10 @@
             if (position < 0 || position >= _InnerArray.Length)
                 throw new IndexOutOfRangeException();
             return _InnerArray[position];
+        }
+
+        public void SetItem(int position, Object item) {
+            _InnerArray[position] = item;
         }
 
         public Object Remove()
@@ -121,7 +133,7 @@
         ///     Eğer eleman yoksa -1 geri döndürür.
         /// </returns>
         /// <exception cref="NotImplementedException"></exception>
-        public Object Find(Object item) // Index
+        public int Find(Object item) // Index
         {
             for (int i = 0; i < _InnerArray.Length; i++)
             {
@@ -129,6 +141,11 @@
                     return i;
             }
             return -1;
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return _InnerArray.GetEnumerator();
         }
     }
 }

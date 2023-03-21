@@ -1,4 +1,23 @@
-﻿var array = new Array.Array();
+﻿var names = new Array.Array("Ahmet", "Mehmet", "Büşra", "Can","Burcu");
+
+names.SetItem(1, "Melike");
+
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+
+var numbers = new int[] { 1, 2, 3 };
+numbers[0] = 10;
+
+
+foreach (var number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+#region week-01
+var array = new Array.Array();
 
 array.Add("Ahmet");     // 0    4
 array.Add("Mehmet");    // 1    4
@@ -6,8 +25,15 @@ array.Add("Can");       // 2    4
 array.Add("Filiz");     // 3    4
 array.Add("Furkan");    // 4    8
 
+Console.WriteLine(array.GetItem(array.Find("Can"))); ;
+
+foreach (var item in array)
+{
+    System.Console.WriteLine(item);
+}
 
 
 Console.WriteLine(array.Count);
 Console.WriteLine(array.GetItem(3));
 Console.Read();
+#endregion
