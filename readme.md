@@ -4,3 +4,4 @@
 * Hafta01 DataStructures/Array ---- Ödev : DivideArray metodu.
 * Hafta02 DataStructures/Array IEnumerable, params (Constructor overloading)
 * Hafta03 DataStructures - Collections
+* Hafta04 DataStructures - LinkedLists

@@ -1,4 +1,5 @@
-## Hafta 03
-* CollectionConsoleApp oluşturuldu.
-* CollectionTests oluşturuldu.
-* Listeler ile çalışıldı.
+## Hafta 04
+* LinkedList oluşturuldu.
+* LinkedListConsoleApp oluşturuldu.
+* SinglyLinkedTests oluşturuldu.
+* Bağlı listeler ile çalışıldı.
