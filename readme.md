@@ -6,3 +6,4 @@
 * Hafta03 DataStructures - Collections
 * Hafta04 DataStructures - LinkedLists
 * Hafta05 DataStructures - Doubly Linked List and IEnumerable implementation(singly and doubly)
+* Hafta06 DataStructures - Stack (LinkedListStack and ArrayStack)

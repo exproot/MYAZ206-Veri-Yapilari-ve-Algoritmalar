@@ -3,8 +3,9 @@ using System.Collections;
 namespace LinkedList.Singly;
 
 public class SinglyLinkedList<T> : IEnumerable<T> {
-
+    private int _count = 0;
     public SinglyLinkedListNode<T>? Head { get; set; }
+    public int Count => _count;
 
     public SinglyLinkedList()
     {
@@ -27,11 +28,13 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
 
         if(Head == null) {
             Head = node;
+            _count++;
             return;
         }
 
         node.Next = Head;
         Head = node;
+        _count++;
         return;
 
     }
@@ -46,6 +49,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
 
         if(Head is null) {
             Head = node;
+            _count++;
             return;
         }
 
@@ -57,6 +61,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
             current = current.Next;
         }
         prev.Next = node;
+        _count++;
         return;
     }
 
@@ -77,6 +82,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
             if(current.Equals(givenNode)){
                 node.Next = current;
                 prev.Next = node;
+                _count++;
                 return;
             }
 
@@ -108,6 +114,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
             if(current.Equals(node)){
                 newNode.Next = current.Next;
                 current.Next = newNode;
+                _count++;
                 return;
             }
 
@@ -129,6 +136,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
 
         T item = Head.Val;
         Head = Head.Next;
+        _count--;
         return item;
     }
 
@@ -149,6 +157,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
         if(current.Next is null) {
             T item = current.Val;
             Head = null;
+            _count--;
             return item;
         }
 
@@ -160,6 +169,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
                 
                 T item = current.Val;
                 prev.Next = null;
+                _count--;
                 return item;
             }
 
@@ -198,6 +208,7 @@ public class SinglyLinkedList<T> : IEnumerable<T> {
                 T item = node.Val;
                 prev.Next = current.Next;
                 current = null;
+                _count--;
                 return item;
             }
 

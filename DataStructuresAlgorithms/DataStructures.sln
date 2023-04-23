@@ -27,6 +27,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{63C75B94
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoublyLinkedListTests", "Tests\DoublyLinkedListTests\DoublyLinkedListTests.csproj", "{6ED50066-83B3-4D9F-9510-3F369321E793}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Structures", "Data Structures", "{8707E88E-65E3-40C7-A725-FF4FF76FFA7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stack", "Data Structures\Stack\Stack.csproj", "{158CDC47-A021-4556-AD6B-E6976BDAC413}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTests", "Tests\StackTests\StackTests.csproj", "{48A97D4D-0112-40D6-BDC0-FF5A22A718B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +83,14 @@ Global
 		{6ED50066-83B3-4D9F-9510-3F369321E793}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ED50066-83B3-4D9F-9510-3F369321E793}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ED50066-83B3-4D9F-9510-3F369321E793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158CDC47-A021-4556-AD6B-E6976BDAC413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158CDC47-A021-4556-AD6B-E6976BDAC413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158CDC47-A021-4556-AD6B-E6976BDAC413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158CDC47-A021-4556-AD6B-E6976BDAC413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A97D4D-0112-40D6-BDC0-FF5A22A718B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A97D4D-0112-40D6-BDC0-FF5A22A718B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A97D4D-0112-40D6-BDC0-FF5A22A718B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A97D4D-0112-40D6-BDC0-FF5A22A718B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +100,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6ED50066-83B3-4D9F-9510-3F369321E793} = {63C75B94-7E42-45FE-AB90-375F2D3D0237}
+		{158CDC47-A021-4556-AD6B-E6976BDAC413} = {8707E88E-65E3-40C7-A725-FF4FF76FFA7C}
+		{48A97D4D-0112-40D6-BDC0-FF5A22A718B0} = {63C75B94-7E42-45FE-AB90-375F2D3D0237}
 	EndGlobalSection
 EndGlobal
