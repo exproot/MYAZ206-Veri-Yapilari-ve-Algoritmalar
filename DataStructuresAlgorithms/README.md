@@ -1,4 +1,4 @@
-## Hafta 04
+## Hafta 06
 * LinkedList oluşturuldu.
 * LinkedListConsoleApp oluşturuldu.
 * SinglyLinkedTests oluşturuldu.
