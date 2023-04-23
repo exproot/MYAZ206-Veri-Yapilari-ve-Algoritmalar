@@ -2,11 +2,11 @@
 
 namespace Array
 {
-    public class Array : IEnumerable
+    public class Array<T> : IEnumerable
     {
         // Object
         // Type : Array
-        private Object[] _InnerArray; // null
+        private T[] _InnerArray; // null
         private int index = 0;
 
         public int Count => index;  // Dizi kaç eleman var?
@@ -15,16 +15,16 @@ namespace Array
 
         public Array()
         {
-            _InnerArray = new Object[4]; // Block allocation
+            _InnerArray = new T[4]; // Block allocation
         }
 
-         public Array(params Object[] init) {
-            var newArray = new Object[init.Length];
+         public Array(params T[] init) {
+            var newArray = new T[init.Length];
             System.Array.Copy(init, newArray, init.Length);
             _InnerArray = newArray;
         }
 
-        public void Add(Object item)
+        public void Add(T item)
         {
             if (index == _InnerArray.Length)
             {
@@ -35,9 +35,9 @@ namespace Array
             index++;
         }
 
-        private void DoubleArray(object[] array)
+        private void DoubleArray(T[] array)
         {
-            var newArray = new Object[array.Length * 2];
+            var newArray = new T[array.Length * 2];
             System.Array.Copy(array, newArray, array.Length);
             _InnerArray = newArray;
         }
@@ -51,7 +51,7 @@ namespace Array
         ///     Eğer pozisyon sınırlar dışındaysa IndexOutOfRangeException hata fırlatır.
         /// </returns>
         /// <exception cref="NotImplementedException"></exception>
-        public Object GetItem(int position)
+        public T GetItem(int position)
         {
             // throw new NotImplementedException();
             if (position < 0 || position >= _InnerArray.Length)
@@ -65,13 +65,13 @@ namespace Array
         /// </summary>
         /// <param name="position"></param>
         /// <param name="item"></param>
-        public void SetItem(int position, Object item) {
+        public void SetItem(int position, T item) {
              if (position < 0 || position >= _InnerArray.Length)
                 throw new IndexOutOfRangeException();
             _InnerArray[position] = item;
         }
 
-        public Object Remove()
+        public T Remove()
         {
             if (index == 0)
                 throw new Exception("Out of index!");
@@ -79,15 +79,15 @@ namespace Array
                 DivideArray(_InnerArray); // HAFTA 1 ÖDEV
             }
             var temp = _InnerArray[index - 1];
-            _InnerArray[index - 1] = null;
+            _InnerArray[index - 1] = default;
             index--;
             return temp;
         }
 
-        private void DivideArray(object[] arr) { // HAFTA 1 ÖDEV
+        private void DivideArray(T[] arr) { // HAFTA 1 ÖDEV
             try
             {
-                var newArray = new Object[arr.Length / 2];
+                var newArray = new T[arr.Length / 2];
                 System.Array.Copy(arr, newArray, arr.Length / 2);
                 _InnerArray = newArray;
             }
@@ -105,9 +105,9 @@ namespace Array
         /// </summary>
         /// <param name="position"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public Object RemoveItem(int position) {
+        public T RemoveItem(int position) {
             var item = GetItem(position);
-            SetItem(position, null);
+            SetItem(position, default);
             for (int i = position; i < Count -1; i++)
             {
                 Swap(i, i+1);
@@ -115,7 +115,7 @@ namespace Array
             index--;
 
             if (index == _InnerArray.Length / 2) {
-                var newArr = new Object[_InnerArray.Length / 2];
+                var newArr = new T[_InnerArray.Length / 2];
                 System.Array.Copy(_InnerArray, newArr, newArr.Length);
                 _InnerArray = newArr;
             }
@@ -143,11 +143,11 @@ namespace Array
         ///     Eğer eleman yoksa -1 geri döndürür.
         /// </returns>
         /// <exception cref="NotImplementedException"></exception>
-        public int Find(Object item) // Index
+        public int Find(T item) // Index
         {
             for (int i = 0; i < _InnerArray.Length; i++)
             {
-                if (item == _InnerArray[i])
+                if (item.Equals(_InnerArray[i]))
                     return i;
             }
             return -1;
@@ -160,9 +160,9 @@ namespace Array
         /// Verilen pozisyon bilgileri kontrol edilmelidir.
         /// </summary>
         /// <returns></returns>
-        public Object[] Copy(int v1, int v2)
+        public T[] Copy(int v1, int v2)
         {
-            var newArray = new Object[v2]; // v2 - v1
+            var newArray = new T[v2]; // v2 - v1
             int j = 0;
             for(int i=v1; i < v2; i++)
             {
