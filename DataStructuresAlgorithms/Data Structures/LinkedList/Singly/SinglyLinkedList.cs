@@ -1,11 +1,20 @@
+using System.Collections;
+
 namespace LinkedList.Singly;
 
-public class SinglyLinkedList<T> {
+public class SinglyLinkedList<T> : IEnumerable<T> {
 
     public SinglyLinkedListNode<T>? Head { get; set; }
 
     public SinglyLinkedList()
     {
+    }
+
+    public SinglyLinkedList(IEnumerable<T> collection) {
+        foreach (var item in collection)
+        {
+            AddFirst(item);
+        }
     }
 
     /// <summary>
@@ -196,5 +205,15 @@ public class SinglyLinkedList<T> {
             current = current.Next;
         }
         throw new Exception("Given node not found!");
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        return new SinglyLinkedListEnumerator<T>(Head);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }

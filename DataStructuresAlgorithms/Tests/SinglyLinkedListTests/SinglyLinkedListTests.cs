@@ -287,5 +287,67 @@ public class SinglyLinkedListTests
 
     }
 
+    [Fact]
+    public void SinglyLinkedList_Get_Enumerator_Test()
+    {
+        // Arrange && Act
+        var list = new SinglyLinkedList<int>();
+        list.AddLast(10);
+        list.AddLast(20);
+        list.AddLast(30);
 
+        Assert.Collection<int>(list,
+            item => Assert.Equal(10, item),
+            item => Assert.Equal(20, item),
+            item => Assert.Equal(30, item));
+    }
+
+    [Fact]
+    public void SinglyLinkedList_Constructor_For_Char_Array_Input_Test()
+    {
+        // Arrange && Act
+        var list = new SinglyLinkedList<char>("meltem".ToArray());
+        
+        // Assert
+        // m e t l e m 
+        Assert.Collection<char>(list,
+            item => Assert.Equal('m', item),
+            item => Assert.Equal('e', item),
+            item => Assert.Equal('t', item),
+            item => Assert.Equal('l', item),
+            item => Assert.Equal('e', item),
+            item => Assert.Equal('m', item));
+    }
+
+    [Fact]
+    public void SinglyLinkedList_Constructor_For_List_Input_Test()
+    {
+        // Arrange && Act
+        var list = new SinglyLinkedList<int>(new List<int>() { 5,10,15,20});
+
+        // Assert
+        // 20 15 10 5
+        Assert.Collection<int>(list,
+            item => Assert.Equal(20, item),
+            item => Assert.Equal(15, item),
+            item => Assert.Equal(10, item),
+            item => Assert.Equal(5, item));
+    }
+    
+    [Fact]
+    public void SinglyLinkedList_Constructor_For_SortedSet_Input_Test()
+    {
+        // Arrange && Act
+        var list = new SinglyLinkedList<int>(new SortedSet<int>() { 23, 16, 23, 55, 61, 23, 44});
+
+        // Assert
+        // 16 23 23 44 55 61 
+        // 61 55 44 23 16
+        Assert.Collection<int>(list,
+            item => Assert.Equal(61, item),
+            item => Assert.Equal(55, item),
+            item => Assert.Equal(44, item),
+            item => Assert.Equal(23, item),
+            item => Assert.Equal(16, item));
+    }
 }

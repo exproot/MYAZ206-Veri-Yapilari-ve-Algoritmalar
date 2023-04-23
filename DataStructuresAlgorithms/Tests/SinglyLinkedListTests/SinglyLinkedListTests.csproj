@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\List\List.csproj" />
+    <ProjectReference Include="..\..\Data Structures\LinkedList\LinkedList.csproj" />
   </ItemGroup>
 
 </Project>
