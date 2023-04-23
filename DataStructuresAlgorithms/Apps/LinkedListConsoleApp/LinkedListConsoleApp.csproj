@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\LinkedList\LinkedList.csproj" />
+    <ProjectReference Include="..\..\Data Structures\LinkedList\LinkedList.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

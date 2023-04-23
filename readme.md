@@ -5,3 +5,4 @@
 * Hafta02 DataStructures/Array IEnumerable, params (Constructor overloading)
 * Hafta03 DataStructures - Collections
 * Hafta04 DataStructures - LinkedLists
+* Hafta05 DataStructures - Doubly Linked List and IEnumerable implementation(singly and doubly)
