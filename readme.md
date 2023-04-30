@@ -8,3 +8,11 @@
 * Hafta05 DataStructures - Doubly Linked List and IEnumerable implementation(singly and doubly)
 * Hafta06 DataStructures - Stack (LinkedListStack and ArrayStack)
 * Hafta07 DataStructures - Queue (LinkedListQueue and ArrayQueue)
+* Hafta08 Algoritma Analizi
+    - Asymptotic Analysis
+    - Runnig-Time Analysis 
+    - Big O
+    - Recursion
+        - Substitution Method
+        - Iteration Method
+        - Master Theorem
