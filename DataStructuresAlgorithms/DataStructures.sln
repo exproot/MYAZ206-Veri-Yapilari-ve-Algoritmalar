@@ -43,6 +43,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigOWebApp", "Apps\BigOWebA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecursiveConsoleApp", "Apps\RecursiveConsoleApp\RecursiveConsoleApp.csproj", "{4F099D84-0B6B-4BB2-8BF3-EE9C48B1E9A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithms", "SortAlgorithms\SortAlgorithms.csproj", "{4D5F287D-AA60-4ED0-A5E9-D42F1746C930}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithmTests", "Tests\SortAlgorithmTests\SortAlgorithmTests.csproj", "{44769246-87D1-4B7A-89EC-0F5820CB3AF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithmsApp", "SortingAlgorithmsApp\SortingAlgorithmsApp.csproj", "{0522E86F-CB34-40F1-8CDC-AAA241CD86E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +123,18 @@ Global
 		{4F099D84-0B6B-4BB2-8BF3-EE9C48B1E9A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F099D84-0B6B-4BB2-8BF3-EE9C48B1E9A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F099D84-0B6B-4BB2-8BF3-EE9C48B1E9A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D5F287D-AA60-4ED0-A5E9-D42F1746C930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D5F287D-AA60-4ED0-A5E9-D42F1746C930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D5F287D-AA60-4ED0-A5E9-D42F1746C930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D5F287D-AA60-4ED0-A5E9-D42F1746C930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44769246-87D1-4B7A-89EC-0F5820CB3AF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44769246-87D1-4B7A-89EC-0F5820CB3AF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44769246-87D1-4B7A-89EC-0F5820CB3AF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44769246-87D1-4B7A-89EC-0F5820CB3AF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0522E86F-CB34-40F1-8CDC-AAA241CD86E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0522E86F-CB34-40F1-8CDC-AAA241CD86E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0522E86F-CB34-40F1-8CDC-AAA241CD86E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0522E86F-CB34-40F1-8CDC-AAA241CD86E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -132,5 +150,6 @@ Global
 		{3FE48774-5014-4DDE-B8BE-C4FF777E9FDD} = {63C75B94-7E42-45FE-AB90-375F2D3D0237}
 		{0FD19ACE-912B-42C8-A0D1-CE62FF4D4544} = {001DF266-D232-4ADB-A250-7BE6914ED18D}
 		{4F099D84-0B6B-4BB2-8BF3-EE9C48B1E9A5} = {001DF266-D232-4ADB-A250-7BE6914ED18D}
+		{44769246-87D1-4B7A-89EC-0F5820CB3AF9} = {63C75B94-7E42-45FE-AB90-375F2D3D0237}
 	EndGlobalSection
 EndGlobal

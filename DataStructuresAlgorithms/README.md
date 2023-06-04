@@ -1,4 +1,4 @@
-## Hafta 08
+## Hafta 09
 * LinkedList oluşturuldu.
 * LinkedListConsoleApp oluşturuldu.
 * SinglyLinkedTests oluşturuldu.
@@ -20,3 +20,5 @@
 * Master Theorem açıklandı.
 * Recursive(Yinelemeli) fonksiyonlar açıklandı.
 * RecursiveConsoleApp eklendi.
+* Sıralama algoritmaları eklendi.
+* Eklenen sıralama algoritmalarının kullanılması amaçlanarak bir entity framework core        uygulaması oluşturuldu.
