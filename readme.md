@@ -16,3 +16,10 @@
         - Substitution Method
         - Iteration Method
         - Master Theorem
+* Hafta09-10 Sıralama Algoritmaları
+    - Bubble Sort
+    - Insertion Sort
+    - Selection Sort
+    - Quick Sort
+    - Merge Sort
+    
