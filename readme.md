@@ -22,4 +22,4 @@
     - Selection Sort
     - Quick Sort
     - Merge Sort
-    
+* Hafta11 Tree

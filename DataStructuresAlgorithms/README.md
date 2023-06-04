@@ -22,3 +22,4 @@
 * RecursiveConsoleApp eklendi.
 * Sıralama algoritmaları eklendi.
 * Eklenen sıralama algoritmalarının kullanılması amaçlanarak bir entity framework core        uygulaması oluşturuldu.
+* BinaryTree yapısı oluşturuldu ve testler yazıldı.
